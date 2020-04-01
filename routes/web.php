@@ -13,4 +13,15 @@
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+Route::get('/data-pemohon', function () {
+    return view('data-skm');
+})->name('data-pemohon');
+Route::get('/form-skm', function () {
+    return view('form-skm');
+})->name('form-skm');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
