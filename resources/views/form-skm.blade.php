@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <a href="{{route('home')}}" type="button" class="btn btn-primary mt-4">Simpan !</a>
+                                <a href="{{route('result-skm')}}" type="button" class="btn btn-primary mt-4">Simpan !</a>
                             </div>
                         </form>
                     </div>

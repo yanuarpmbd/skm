@@ -20,6 +20,9 @@ Route::get('/data-pemohon', function () {
 Route::get('/form-skm', function () {
     return view('form-skm');
 })->name('form-skm');
+Route::get('/result-skm', function () {
+    return view('result-skm');
+})->name('result-skm');
 
 
 Route::group(['prefix' => 'admin'], function () {
