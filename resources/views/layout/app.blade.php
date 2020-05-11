@@ -23,7 +23,7 @@
     @yield('css')
 </head>
 
-<body class="index-page">
+<body class="index-page scroll-bar">
 
 @yield('content')
 
@@ -40,9 +40,6 @@
 <script src="js/plugins/datetimepicker.js" type="text/javascript"></script>
 <script src="js/plugins/bootstrap-datepicker.min.js"></script>
 <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-<script src="js/argon-design-system.min.js?v=1.2.0" type="text/javascript"></script>
 <script>
     function scrollToDownload() {
 
