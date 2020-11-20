@@ -39,7 +39,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" name="nomor_tiket" id="nomor_tiket" placeholder="Nomor Tiket..." type="text" autocomplete="off">
+                                            <input class="form-control" name="nomor_tiket" id="nomor_tiket" placeholder="Nomor Tiket..." type="number" required autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="text-center">
