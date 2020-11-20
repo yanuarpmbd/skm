@@ -17,7 +17,7 @@
                     <h3 class="display-3 text-white">DPMPTSP Provinsi Jawa Tengah<span class="text-white">Aplikasi <strong>Survey Kepuasan Masyarakat</strong></span></h3>
                     <p class="lead text-white">Selamat Datang di Aplikasi SKM DPMPTSP Provinsi Jawa Tengah</p>
                     <div class="btn-wrapper">
-                        <a href="" class="btn btn-success">Lihat Nilai SKM</a>
+                        <a href="{{route('total-skm')}}" class="btn btn-success">Lihat Nilai SKM</a>
                     </div>
                 </div>
                 <div class="col-lg-5 mb-lg-auto">

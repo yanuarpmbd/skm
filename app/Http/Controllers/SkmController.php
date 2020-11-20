@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\DataSkm;
 use App\DataUser;
+use App\Pertanyaan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use mysql_xdevapi\Warning;
+use PhpParser\Node\Stmt\Return_;
 
 class SkmController extends Controller
 {
@@ -61,11 +65,56 @@ class SkmController extends Controller
         //dd($store);
         $store->save();
         Session::put('key', $store->id);
-        return view('form-skm');
+        return redirect()->route('get-pertanyaan');
     }
-    public function storeDataSKM(){
+    public function getPertanyaan(){
+        $pertanyaans = Pertanyaan::all();
+        //dd($pertanyaans);
+        Return view('form-skm', compact('pertanyaans'));
+    }
+    public function storeDataSKM(Request $request){
+        $data = $request->slider;
         $id = Session::get('key');
-        $
-        dd($id);
+        $result = round(array_sum($data) / count($data), 2);
+
+        $store = new DataSkm();
+        $store->user_id = $id;
+        $store->nilai_pertanyaan = json_encode($data);
+        $store->hasil_skm = $result;
+        //dd($store);
+        $store->save();
+
+        Session::put('hasil', $result);
+        Return redirect()->route('result-skm');
+    }
+    public function getResultSKM(){
+        $res = Session::get('hasil');
+
+        Return view('result-skm', compact('res'));
+    }
+    public function getTotalSKM(){
+        $skms_this_month = DataSkm::whereYear('created_at', '=', Carbon::now('m'))->whereMonth('created_at', '=', Carbon::now('m'))->get();
+        $skms_previous_month = DataSkm::whereYear('created_at', '=', Carbon::now()->subMonth()->format('Y'))->whereMonth('created_at', '=', Carbon::now()->subMonth()->format('m'))->get();
+        if ($skms_this_month->isEmpty()){
+            $total_this_month = '00.00';
+        }
+        else{
+            $total_skm_this_month = 0;
+            foreach ($skms_this_month as $key=>$skm_this_month){
+                $total_skm_this_month += $skm_this_month->hasil_skm;
+            }
+            $total_this_month = round($total_skm_this_month / count($skms_this_month), 2);
+        }
+        if($skms_previous_month->isEmpty()){
+            $total_previous_month = '00.00';
+        }
+        else{
+            $total_previous_month = 0;
+            foreach ($skms_previous_month as $key=>$skm_previous_month){
+                $total_skm_previous_month += $skms_previous_month;
+            }
+            $total_previous_month = round($total_skm_previous_month / count($skms_previous_month), 2);
+        }
+        return view('total-skm', compact('total_this_month', 'total_previous_month'));
     }
 }

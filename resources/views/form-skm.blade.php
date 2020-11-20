@@ -27,60 +27,14 @@
                     <div class="card-body px-lg-5 py-lg-5">
                         <form action="{{route('form-data-skm')}}" method="post">
                             @csrf
+                            @foreach($pertanyaans as $pertanyaan)
                             <div class="form-group">
                                 <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang kesesuaian persyaratan pelayanan yang ditetapkan dengan yang diminta oleh petugas?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
+                                    <h5 class="text-dark font-weight-bold">{{$pertanyaan->pertanyaan}}</h5>
+                                    <input class="js-range-slider" name="slider[]" id="slider[]" type="text" data-min="0" data-max="100">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pemahaman saudara tentang kemudahan prosedur pelayanan dan pengaduan di Dinas Perizinan?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang jangka waktu penyelesaian pelayanan?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang kesesuaian antara biaya/tarif yang dibayarkan dengan biaya yang telah ditetapkan?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang kesesuaian hasil pelayanan dengan ketentuan yang telah di tetapkan?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang kemampuan yang dimilki petugas dalam memberikan pelayanan baik dari aspek pengetahuan, keahlian, ketrampilan dan pengalaman?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang perilaku petugas dalam memberikan pelayanan?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang sarana prasarana pelayanan?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-slider-container">
-                                    <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang mekanisme dan respon penanganan pengaduan dalam penyelenggara pelayanan publik?</h5>
-                                    <input class="js-range-slider" type="text" data-min="0" data-max="100">
-                                </div>
-                            </div>
+                            @endforeach
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary mt-4">Simpan !</button>
                             </div>

@@ -19,10 +19,10 @@ Route::get('/data-pemohon-manual', function () {
     return view('data-skm-manual');
 })->name('data-pemohon-manual');
 Route::post('/form-skm','SkmController@storeDataUser')->name('form-skm');
-Route::post('/form-data-skm', 'SkmController@storeDataSKM')->name('form-data-skm');
-Route::get('/result-skm', function () {
-    return view('result-skm');
-})->name('result-skm');
+Route::get('/pertanyaan','SkmController@getPertanyaan')->name('get-pertanyaan');
+Route::post('/form-data-skm','SkmController@storeDataSKM')->name('form-data-skm');
+Route::get('/result-skm','SkmController@getResultSKM')->name('result-skm');
+Route::get('/nilai-skm','SkmController@getTotalSKM')->name('total-skm');
 
 
 Route::group(['prefix' => 'admin'], function () {

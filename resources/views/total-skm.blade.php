@@ -20,11 +20,17 @@
                     <div class="transform-perspective-right">
                         <div class="card bg-secondary shadow border-0">
                             <div class="card-body px-lg-5 py-lg-5">
-                                <div class="text-center text-muted mb-4">
-                                    <h6>Hasil Penilaian Anda Terhadap Kualitas Pelayanan DPMPTSP Provinsi Jawa Tengah</h6>
+                                <div class="text-center text-muted mb-2">
+                                    <h6>Nilai SKM Bulan Ini</h6>
                                 </div>
-                                <div class="text-center mb-4">
-                                    <h1 class="display-1 text-gray-dark">{{$res}}</h1>
+                                <div class="text-center mb-2">
+                                    <h1 class="display-1 text-gray-dark">{{$total_this_month}}</h1>
+                                </div>
+                                <div class="text-center text-muted mb-2">
+                                    <h6>Nilai SKM Bulan Lalu</h6>
+                                </div>
+                                <div class="text-center mb-2">
+                                    <h1 class="display-1 text-gray-dark">{{$total_previous_month}}</h1>
                                 </div>
                                 <div class="text-center">
                                     <a href="{{route('home')}}" type="button" class="btn btn-primary my-4">Home</a>
