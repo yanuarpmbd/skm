@@ -25,34 +25,26 @@
                             <form action="{{route('form-skm')}}" method="post">
                                 @csrf
                                 <div class="form-group">
+                                    <h6>Nama</h6>
                                     <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                                        </div>
-                                        <input class="form-control" name="nama" id="nama" placeholder="Nama" type="text" autocomplete="off">
+                                        <input class="form-control" name="nama" id="nama" placeholder="Nama" type="text" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <h6>Alamat</h6>
                                     <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-badge"></i></span>
-                                        </div>
-                                        <input class="form-control" name="alamat" id="alamat" placeholder="Alamat" type="text" autocomplete="off">
+                                        <input class="form-control" name="alamat" id="alamat" placeholder="Alamat" type="text" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <h6>Nomor Telepon / HP</h6>
                                     <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
-                                        </div>
-                                        <input class="form-control" name="no_telp" id="no_telp" placeholder="No Telp / HP" type="text" autocomplete="off">
+                                        <input class="form-control" name="no_telp" id="no_telp" placeholder="No Telp / HP" type="text" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <h6>Jenis Layanan</h6>
                                     <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-tag"></i></span>
-                                        </div>
                                         <select class="form-control" name="status" id="status" placeholder="Jenis Layanan" type="text">
                                             <option value="Layanan Pengaduan dan Informasi">Layanan Pengaduan dan Informasi</option>
                                             <option value="Layanan LKPM">Layanan LKPM</option>

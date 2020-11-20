@@ -43,3 +43,10 @@
         </div>--}}
     </section>
 @endsection
+@section('js')
+    <script>
+        setTimeout(function () {
+            window.location.href = "{{route('home')}}";
+        },5000);
+    </script>
+@endsection

@@ -27,46 +27,31 @@
                                 <div class="form-group">
                                     <h6>Nomor Tiket</h6>
                                     <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-bold-right"></i></span>
-                                        </div>
-                                        <input class="form-control" name="request_id" id="request_id" placeholder="Nomot Tiket" value="{{$request_id}}" type="text">
+                                        <input class="form-control" name="request_id" id="request_id" placeholder="Nomot Tiket" value="{{$request_id}}" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <h6>Nama / Nama Perusahaan</h6>
                                     <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                                        </div>
-                                        <input class="form-control" name="nama" id="nama" placeholder="Nama" value="{{$nama}} {{$nama_perusahaan}}" type="text">
+                                        <input class="form-control" name="nama" id="nama" placeholder="Nama" value="{{$nama}} {{$nama_perusahaan}}" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <h6>Bidang Perizinan / Rekomendasi</h6>
                                     <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
-                                        </div>
-                                        <input class="form-control" name="sektor" id="sektor" placeholder="Bidang Perizinan / Rekomendasi" value="{{$sektor}}" type="text">
+                                        <input class="form-control" name="sektor" id="sektor" placeholder="Bidang Perizinan / Rekomendasi" value="{{$sektor}}" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <h6>Nama Perizinan / Rekomendasi</h6>
                                     <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-box-2"></i></span>
-                                        </div>
-                                        <input class="form-control" name="jenis_izin" id="jenis_izin" placeholder="Nama Perizinan / Rekomendasi" value="{{$jenis_izin}}" type="text">
+                                        <input class="form-control" name="jenis_izin" id="jenis_izin" placeholder="Nama Perizinan / Rekomendasi" value="{{$jenis_izin}}" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <h6>Status</h6>
                                     <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-single-02"></i></span>
-                                        </div>
-                                        <input class="form-control" name="status" id="status" placeholder="Status" value="Layanan Perizinan" type="text">
+                                        <input class="form-control" name="status" id="status" placeholder="Status" value="Layanan Perizinan" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="text-center">

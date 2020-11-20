@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <div class="input-slider-container">
                                     <h5 class="text-dark font-weight-bold">{{$pertanyaan->pertanyaan}}</h5>
-                                    <input class="js-range-slider" name="slider[]" id="slider[]" type="text" data-min="0" data-max="100">
+                                    <input class="js-range-slider" name="slider[]" id="slider[]" type="text">
                                 </div>
                             </div>
                             @endforeach
@@ -52,7 +52,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
     <script>
         $(".js-range-slider").ionRangeSlider({
-            skin: "square",
+            skin: "big",
+            min : "0",
+            max : "100",
+            from: "50",
+            grid : "true",
+            grid_num : "5",
         });
     </script>
     </script>
