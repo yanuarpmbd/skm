@@ -14,12 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
-Route::get('/data-pemohon', function () {
-    return view('data-skm');
-})->name('data-pemohon');
-Route::get('/form-skm', function () {
-    return view('form-skm');
-})->name('form-skm');
+Route::get('/data-pemohon','SkmController@getdata')->name('data-pemohon');
+Route::get('/data-pemohon-manual', function () {
+    return view('data-skm-manual');
+})->name('data-pemohon-manual');
+Route::post('/form-skm','SkmController@storeDataUser')->name('form-skm');
+Route::post('/form-data-skm', 'SkmController@storeDataSKM')->name('form-data-skm');
 Route::get('/result-skm', function () {
     return view('result-skm');
 })->name('result-skm');

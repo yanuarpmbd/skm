@@ -1,0 +1,30 @@
+GET http://beta-perizinan.dpmptsp.jatengprov.go.id/skm/getdata
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-11-18T023430.200.html
+
+###
+
+GET http://beta-perizinan.dpmptsp.jatengprov.go.id/skm/index
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-11-18T023418.200.html
+
+###
+
+GET http://beta-perizinan.dpmptsp.jatengprov.go.id/api/Skm/Index
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-11-18T023318.404.html
+
+###
+
+GET http://betaa-perizinan.dpmptsp.jatengprov.go.id/api/Skm/Index
+Accept: */*
+Cache-Control: no-cache
+
+###
+

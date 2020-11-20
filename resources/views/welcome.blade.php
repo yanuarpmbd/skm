@@ -25,21 +25,30 @@
                         <div class="card bg-secondary shadow border-0">
                             <div class="card-body px-lg-5 py-lg-5">
                                 <div class="text-center text-muted mb-4">
+                                    @if (session()->has('bad'))
+                                        <div class="alert alert-danger">
+                                            {{session()->get('bad')}}
+                                        </div>
+                                    @endif
                                     <h6>Silahkan Masukkan Nomor Tiket Anda</h6>
                                 </div>
-                                <form role="form">
+                                <form action="{{route('data-pemohon')}}" method="get">
+                                    @csrf
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Nomor Tiket..." type="text">
+                                            <input class="form-control" name="nomor_tiket" id="nomor_tiket" placeholder="Nomor Tiket..." type="text" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{route('data-pemohon')}}" type="button" class="btn btn-primary my-4">Submit !</a>
+                                        <button type="submit" class="btn btn-primary my-4">Submit !</button>
                                     </div>
                                 </form>
+                                <div class="text-center text-muted mb-4">
+                                    <a href="{{route('data-pemohon-manual')}}" type="button" class="btn btn-youtube my-0">Belum Memiliki Nomor Tiket?</a>
+                                </div>
                             </div>
                         </div>
                     </div>

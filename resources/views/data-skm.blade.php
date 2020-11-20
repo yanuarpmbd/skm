@@ -22,65 +22,55 @@
                             <div class="text-muted text-center mb-3"><h4>Data Pemohon</h4></div>
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
-                            <form role="form">
+                            <form action="{{route('form-skm')}}" method="post">
+                                @csrf
                                 <div class="form-group">
+                                    <h6>Nomor Tiket</h6>
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-bold-right"></i></span>
+                                        </div>
+                                        <input class="form-control" name="request_id" id="request_id" placeholder="Nomot Tiket" value="{{$request_id}}" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Nama / Nama Perusahaan</h6>
                                     <div class="input-group input-group-alternative mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Nama" type="text">
+                                        <input class="form-control" name="nama" id="nama" placeholder="Nama" value="{{$nama}} {{$nama_perusahaan}}" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-badge"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Alamat" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="No Telp / HP" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group">
+                                    <h6>Bidang Perizinan / Rekomendasi</h6>
                                     <div class="input-group input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Bidang Perizinan / Rekomendasi" type="text">
+                                        <input class="form-control" name="sektor" id="sektor" placeholder="Bidang Perizinan / Rekomendasi" value="{{$sektor}}" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <h6>Nama Perizinan / Rekomendasi</h6>
                                     <div class="input-group input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-box-2"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Nama Perizinan / Rekomendasi" type="text">
+                                        <input class="form-control" name="jenis_izin" id="jenis_izin" placeholder="Nama Perizinan / Rekomendasi" value="{{$jenis_izin}}" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="input-group input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-building"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Lokasi Usaha" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group">
+                                    <h6>Status</h6>
                                     <div class="input-group input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Status" type="text">
+                                        <input class="form-control" name="status" id="status" placeholder="Status" value="Layanan Perizinan" type="text">
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <a href="{{route('form-skm')}}" type="button" class="btn btn-primary mt-4">Lanjut !</a>
+                                    <button type="submit" class="btn btn-primary mt-4">Lanjut !</button>
                                 </div>
                             </form>
                         </div>

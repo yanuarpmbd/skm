@@ -25,7 +25,8 @@
                         <div class="text-muted text-center mb-3"><h4>Form Survey Kepuasan Masyarakat</h4></div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
-                        <form role="form">
+                        <form action="{{route('form-data-skm')}}" method="post">
+                            @csrf
                             <div class="form-group">
                                 <div class="input-slider-container">
                                     <h5 class="text-dark font-weight-bold">Bagaimana pendapat saudara tentang kesesuaian persyaratan pelayanan yang ditetapkan dengan yang diminta oleh petugas?</h5>
@@ -81,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <a href="{{route('result-skm')}}" type="button" class="btn btn-primary mt-4">Simpan !</a>
+                                <button type="submit" class="btn btn-primary mt-4">Simpan !</button>
                             </div>
                         </form>
                     </div>
