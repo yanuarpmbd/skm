@@ -9,8 +9,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-use mysql_xdevapi\Warning;
-use PhpParser\Node\Stmt\Return_;
 
 class SkmController extends Controller
 {
@@ -26,6 +24,9 @@ class SkmController extends Controller
         $result=curl_exec($ch);
         curl_close($ch);
         $datas = json_decode($result,true);
+        $data_users = DataUser::all();
+        foreach ($data_users as $data_user){
+        }
         if (is_array($datas) || is_object($datas)){
             foreach ($datas as $data){
             }
@@ -36,15 +37,22 @@ class SkmController extends Controller
         $sektor = ($data['parent_name']);
         $jenis_izin = ($data['name']);
 
-        if ($request_id != null){
-            return view('data-skm', compact('request_id', 'nama', 'nama_perusahaan', 'sektor', 'jenis_izin'));
+        if ($request_id == null){
+            return Redirect::back()->with('bad', 'Data Tidak Ditemukan');
+        }
+        elseif ($request_id == $data_user->request_id){
+            return Redirect::back()->with('bad', 'Maaf, Anda Sudah Pernah Mengisi Survey Kepuasan Masyarakat, Terimakasih');
         }
         else{
-            return Redirect::back()->with('bad', 'Data Tidak Ditemukan');
+            return view('data-skm', compact('request_id', 'nama', 'nama_perusahaan', 'sektor', 'jenis_izin'));
         }
     }
     public function storeDataUser(Request $request)
     {
+        $data_users = DataUser::all();
+        foreach ($data_users as $data_user){
+        }
+
         $request_id = $request->input('request_id');
         $nama = $request->input('nama');
         $alamat = $request->input('alamat');
@@ -53,6 +61,9 @@ class SkmController extends Controller
         $jenis_izin = $request->input('jenis_izin');
         $status = $request->input('status');
 
+        if($nama == $data_user->nama){
+            return Redirect::route('home')->with('bad', 'Maaf, Anda Sudah Pernah Mengisi Survey Kepuasan Masyarakat, Terimakasih');
+        }
         $store = new DataUser();
         $store->request_id = $request_id;
         $store->nama = $nama;

@@ -19,9 +19,6 @@
             <div class="col-lg-12">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-white pb-5">
-                        <a href="{{route('data-pemohon')}}" class="btn btn-sm btn-danger btn-icon-only rounded-circle" type="button">
-                            <span class="btn-inner--icon"><i class="ni ni-bold-left"></i></span>
-                        </a>
                         <div class="text-muted text-center mb-3"><h4>Form Survey Kepuasan Masyarakat</h4></div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
