@@ -17,7 +17,7 @@ class SkmController extends Controller
         $user = 'skmptsp';
         $key = md5('5kMp7$p#'.date('dmY'));
         $id = base64_encode($nomor_tiket);
-        $url = "http://beta-perizinan.dpmptsp.jatengprov.go.id/skm/getdetaildata?user=$user&key=$key&id=$id";
+        $url = "https://beta-perizinan.dpmptsp.jatengprov.go.id/skm/getdetaildata?user=$user&key=$key&id=$id";
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         curl_setopt($ch,CURLOPT_URL,$url);
@@ -120,9 +120,9 @@ class SkmController extends Controller
             $total_previous_month = '00.00';
         }
         else{
-            $total_previous_month = 0;
+            $total_skm_previous_month = 0;
             foreach ($skms_previous_month as $key=>$skm_previous_month){
-                $total_skm_previous_month += $skms_previous_month;
+                $total_skm_previous_month += $skm_previous_month->hasil_skm;
             }
             $total_previous_month = round($total_skm_previous_month / count($skms_previous_month), 2);
         }

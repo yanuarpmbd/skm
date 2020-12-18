@@ -47,7 +47,7 @@
                                     </div>
                                 </form>
                                 <div class="text-center text-muted mb-4">
-                                    <a href="{{route('data-pemohon-manual')}}" type="button" class="btn btn-youtube my-0">Belum Memiliki Nomor Tiket?</a>
+                                    <a href="{{route('data-pemohon-manual')}}" type="button" class="btn btn-instagram my-0">Belum Memiliki Nomor Tiket?</a>
                                 </div>
                             </div>
                         </div>
