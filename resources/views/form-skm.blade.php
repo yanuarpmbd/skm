@@ -17,7 +17,7 @@
         </div>
         <div class="container py-md">
             <div class="col-lg-12">
-                <div class="card bg-secondary shadow border-0">
+                <div class="bg-secondary shadow border-0">
                     <div class="card-header bg-white pb-5">
                         <div class="text-muted text-center mb-3"><h4>Form Survey Kepuasan Masyarakat</h4></div>
                     </div>
@@ -56,6 +56,5 @@
             grid : "true",
             grid_num : "5",
         });
-    </script>
     </script>
 @endsection

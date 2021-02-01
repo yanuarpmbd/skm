@@ -1,16 +1,6 @@
 @extends('layout.app')
 @section('content')
     <section class="section section-xxl section-shaped">
-        <div class="shape shape-style-1 shape-default">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <div class="container py-md">
             <div class="row row-grid justify-content-between align-items-center">
                 <div class="col-lg-7">

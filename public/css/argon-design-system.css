@@ -20396,6 +20396,11 @@ textarea[resize="horizontal"] {
   padding-top: 4rem;
   padding-bottom: 4rem;
     min-height: 100vh;
+    background-image: url("../img/bg.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .sections {
