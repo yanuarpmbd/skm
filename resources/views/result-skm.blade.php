@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-lg-5 mb-lg-auto">
                     <div class="transform-perspective-right">
-                        <div class="card bg-secondary shadow border-0">
+                        <div class="card1 bg-secondary shadow border-0">
                             <div class="card-body px-lg-5 py-lg-5">
                                 <div class="text-center text-muted mb-4">
                                     <h6>Hasil Penilaian Anda Terhadap Kualitas Pelayanan DPMPTSP Provinsi Jawa Tengah</h6>

@@ -14,10 +14,10 @@ class SkmController extends Controller
 {
     public function getData(Request $request){
         $nomor_tiket = $request->input('nomor_tiket');
-        $user = 'skmptsp';
+        $user = 'skmpt5p';
         $key = md5('5kMp7$p#'.date('dmY'));
         $id = base64_encode($nomor_tiket);
-        $url = "https://beta-perizinan.dpmptsp.jatengprov.go.id/skm/getdetaildata?user=$user&key=$key&id=$id";
+        $url = "https://perizinan.jatengprov.go.id/skm/getdetaildata?user=$user&key=$key&id=$id";
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         curl_setopt($ch,CURLOPT_URL,$url);

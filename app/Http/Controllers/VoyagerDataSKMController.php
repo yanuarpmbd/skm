@@ -165,7 +165,10 @@ class VoyagerDataSKMController extends \TCG\Voyager\Http\Controllers\VoyagerBase
         if (view()->exists("voyager::$slug.browse")) {
             $view = "voyager::$slug.browse";
         }
-        $skms_per_month = DataSkm::selectRaw('ROUND(AVG(hasil_skm),2) as hasil, MONTH(created_at) as month, COUNT(user_id) as jml_user')
+
+        $years = DataSkm::selectRaw('YEAR(created_at) as year')
+            ->groupBy('year')->get()->toArray();
+        $skms_per_month = DataSkm::selectRaw('ROUND(AVG(hasil_skm),2) as hasil, MONTH(created_at) as month, COUNT(user_id) as jml_user')->whereYear('created_at','=','2021')
             ->groupBy('month')->get()->toArray();
         foreach ($skms_per_month as $skm_per_month){
             $month = DateTime::createFromFormat('!m', $skm_per_month['month']);
@@ -173,6 +176,19 @@ class VoyagerDataSKMController extends \TCG\Voyager\Http\Controllers\VoyagerBase
         }
         $hasil = array_column($skms_per_month, 'hasil');
         $jml_user = array_column($skms_per_month,'jml_user');
+        $skms = DataSkm::selectRaw('ROUND(AVG(hasil_skm),2) as hasil, MONTH(created_at) as month, COUNT(user_id) as jml_user')->whereYear('created_at','=','2021')
+            ->groupBy('month')->get();
+        $datas = array();
+        $no = 1;
+        foreach ($skms as $key=>$data){
+            $newarr=array();
+            $newarr['no']=$no++;
+            $newarr['hasil']=$data->hasil;
+            $newarr['jml_user']=$data->jml_user;
+            $newarr['month']=$monthName[$key];
+            $datas[]=$newarr;
+        }
+
         return Voyager::view($view, compact(
             'actions',
             'dataType',
@@ -190,7 +206,9 @@ class VoyagerDataSKMController extends \TCG\Voyager\Http\Controllers\VoyagerBase
             'showCheckboxColumn',
             'hasil',
             'monthName',
-            'jml_user'
+            'jml_user',
+            'datas',
+            'years',
         ));
     }
 
