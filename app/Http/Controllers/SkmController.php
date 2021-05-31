@@ -84,31 +84,35 @@ class SkmController extends Controller
         Return view('form-skm', compact('pertanyaans'));
     }
     public function storeDataSKM(Request $request){
-
-        $datas = $request->except('_token');
-        foreach ($datas as $key => $data){
-            if ($data == "Tidak Baik"){
-                $data[]= 1;
+        foreach ($request->except('_token') as $key => $datas){
+            if ($datas == "Tidak Baik"){
+                $data[$key] = 1;
             }
-            elseif ($data == "Kurang Baik"){
-                $data[] = 2;
+            elseif ($datas == "Kurang Baik"){
+                $data[$key] = 2;
             }
-            elseif ($data == "Baik"){
-                $data[] = 3;
+            elseif ($datas == "Baik"){
+                $data[$key] = 3;
             }
             else {
-                $data[] = 4;
+                $data[$key] = 4;
             }
         }
-        dd($data[]);
         $id = Session::get('key');
         $result = round(array_sum($data) / count($data) * 25 , 2);
-
         $store = new DataSkm();
         $store->user_id = $id;
-        $store->nilai_pertanyaan = json_encode($data);
+        $store->p1 = $data['p1'];
+        $store->p2 = $data['p2'];
+        $store->p3 = $data['p3'];
+        $store->p4 = $data['p4'];
+        $store->p5 = $data['p5'];
+        $store->p6 = $data['p6'];
+        $store->p7 = $data['p7'];
+        $store->p8 = $data['p8'];
+        $store->p9 = $data['p9'];
         $store->hasil_skm = $result;
-        //dd($store);
+        dd($store);
         $store->save();
 
         Session::put('hasil', $result);

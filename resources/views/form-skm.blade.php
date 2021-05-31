@@ -56,5 +56,4 @@
             values : ['Tidak Baik', 'Kurang Baik', 'Baik', 'Sangat Baik']
         });
     </script>
-    </script>
 @endsection
