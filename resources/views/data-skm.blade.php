@@ -27,13 +27,68 @@
                                 <div class="form-group">
                                     <h6>Nomor Tiket</h6>
                                     <div class="input-group input-group-alternative mb-3">
-                                        <input class="form-control" name="request_id" id="request_id" placeholder="Nomot Tiket" value="{{$request_id}}" type="text" readonly required>
+                                        <input class="form-control" name="request_id" id="request_id" placeholder="Nomor Tiket" value="{{$request_id}}" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <h6>Nama / Nama Perusahaan</h6>
                                     <div class="input-group input-group-alternative mb-3">
                                         <input class="form-control" name="nama" id="nama" placeholder="Nama" value="{{$nama}} {{$nama_perusahaan}}" type="text" readonly required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Alamat</h6>
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <input class="form-control" name="alamat" id="alamat" placeholder="Alamat" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h6>No Telp</h6>
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <input class="form-control" name="no_telp" id="no_telp" placeholder="Nomor Telepon" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Jenis Kelamin</h6>
+                                    <div class="input-group input-group-alternative">
+                                        <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" placeholder="Jenis Kelamin" type="text" required>
+                                            <option disabled selected value></option>
+                                            <option value="L">Laki-laki</option>
+                                            <option value="P">Perempuan</option>
+                                            <option value="Lainnya">Lebih baik tidak menyebut</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Pendidikan</h6>
+                                    <div class="input-group input-group-alternative">
+                                        <select class="form-control" name="pendidikan" id="pendidikan" placeholder="Pendidikan" type="text" required>
+                                            <option disabled selected value></option>
+                                            <option value="SD">SD/Sederajat</option>
+                                            <option value="SMP">SMP/Sederajat</option>
+                                            <option value="SMA">SMA/Sederajat</option>
+                                            <option value="D1">D-1</option>
+                                            <option value="D2">D-2</option>
+                                            <option value="D3">D-3</option>
+                                            <option value="D4">D-4</option>
+                                            <option value="S1">S-1</option>
+                                            <option value="S2">S-2</option>
+                                            <option value="S3">S-3</option>
+                                            <option value="Lainnya">Lainnya</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Usia</h6>
+                                    <div class="input-group input-group-alternative">
+                                        <select class="form-control" name="usia" id="usia" placeholder="Usia" type="text" required>
+                                            <option disabled selected value></option>
+                                            <option value="<20"><20 Tahun</option>
+                                            <option value="20-30">21-30 Tahun</option>
+                                            <option value="30-40">31-40 Tahun</option>
+                                            <option value="41-50">41-50 Tahun</option>
+                                            <option value=">50">>50 Tahun</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -57,6 +57,9 @@ class SkmController extends Controller
         $nama = $request->input('nama');
         $alamat = $request->input('alamat');
         $no_telp = $request->input('no_telp');
+        $jenis_kelamin = $request->input('jenis_kelamin');
+        $pendidikan = $request->input('pendidikan');
+        $usia = $request->input('usia');
         $sektor = $request->input('sektor');
         $jenis_izin = $request->input('jenis_izin');
         $status = $request->input('status');
@@ -69,9 +72,11 @@ class SkmController extends Controller
         $store->nama = $nama;
         $store->alamat = $alamat;
         $store->no_telp = $no_telp;
+        $store->jenis_kelamin = $jenis_kelamin;
+        $store->pendidikan = $pendidikan;
+        $store->usia = $usia;
         $store->sektor = $sektor;
         $store->jenis_izin = $jenis_izin;
-        $store->status = $status;
         $store->status = $status;
         //dd($store);
         $store->save();
@@ -112,7 +117,7 @@ class SkmController extends Controller
         $store->p8 = $data['p8'];
         $store->p9 = $data['p9'];
         $store->hasil_skm = $result;
-        dd($store);
+        //dd($store);
         $store->save();
 
         Session::put('hasil', $result);
@@ -124,7 +129,7 @@ class SkmController extends Controller
         Return view('result-skm', compact('res'));
     }
     public function getTotalSKM(){
-        $skms_this_month = DataSkm::whereYear('created_at', '=', Carbon::now('m'))->whereMonth('created_at', '=', Carbon::now('m'))->get();
+        $skms_this_month = DataSkm::whereYear('created_at', '=', Carbon::now()->year)->whereMonth('created_at', '=', Carbon::now()->month)->get();
         $skms_previous_month = DataSkm::whereYear('created_at', '=', Carbon::now()->subMonth()->format('Y'))->whereMonth('created_at', '=', Carbon::now()->subMonth()->format('m'))->get();
         if ($skms_this_month->isEmpty()){
             $total_this_month = '00.00';
