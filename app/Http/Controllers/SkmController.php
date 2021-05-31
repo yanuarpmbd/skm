@@ -14,10 +14,10 @@ class SkmController extends Controller
 {
     public function getData(Request $request){
         $nomor_tiket = $request->input('nomor_tiket');
-        $user = 'skmptsp';
+        $user = 'skmpt5p';
         $key = md5('5kMp7$p#'.date('dmY'));
         $id = base64_encode($nomor_tiket);
-        $url = "https://beta-perizinan.dpmptsp.jatengprov.go.id/skm/getdetaildata?user=$user&key=$key&id=$id";
+        $url = "https://perizinan.jatengprov.go.id/skm/getdetaildata?user=$user&key=$key&id=$id";
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         curl_setopt($ch,CURLOPT_URL,$url);
@@ -84,15 +84,35 @@ class SkmController extends Controller
         Return view('form-skm', compact('pertanyaans'));
     }
     public function storeDataSKM(Request $request){
-        $data = $request->slider;
+        foreach ($request->except('_token') as $key => $datas){
+            if ($datas == "Tidak Baik"){
+                $data[$key] = 1;
+            }
+            elseif ($datas == "Kurang Baik"){
+                $data[$key] = 2;
+            }
+            elseif ($datas == "Baik"){
+                $data[$key] = 3;
+            }
+            else {
+                $data[$key] = 4;
+            }
+        }
         $id = Session::get('key');
-        $result = round(array_sum($data) / count($data), 2);
-
+        $result = round(array_sum($data) / count($data) * 25 , 2);
         $store = new DataSkm();
         $store->user_id = $id;
-        $store->nilai_pertanyaan = json_encode($data);
+        $store->p1 = $data['p1'];
+        $store->p2 = $data['p2'];
+        $store->p3 = $data['p3'];
+        $store->p4 = $data['p4'];
+        $store->p5 = $data['p5'];
+        $store->p6 = $data['p6'];
+        $store->p7 = $data['p7'];
+        $store->p8 = $data['p8'];
+        $store->p9 = $data['p9'];
         $store->hasil_skm = $result;
-        //dd($store);
+        dd($store);
         $store->save();
 
         Session::put('hasil', $result);

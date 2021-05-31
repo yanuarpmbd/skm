@@ -5176,10 +5176,26 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 0.0625rem solid rgba(0, 0, 0, 0.05);
   border-radius: 0.25rem;
-    animation-name: shake;
+    /*animation-name: shake;
     animation-duration: 10s;
     animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite;*/
+}
+
+.card1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0.0625rem solid rgba(0, 0, 0, 0.05);
+    border-radius: 0.25rem;
+        animation-name: shake;
+        animation-duration: 10s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
 }
 
 .card>hr {

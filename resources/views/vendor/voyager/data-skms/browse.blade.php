@@ -2,7 +2,7 @@
 
 @section('page_title', __('voyager::generic.viewing').' '.$dataType->getTranslatedAttribute('display_name_plural'))
 
-{{--@section('page_header')
+@section('page_header')
     <div class="container-fluid">
         <h1 class="page-title">
             <i class="{{ $dataType->icon }}"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
@@ -34,11 +34,10 @@
         @endforeach
         @include('voyager::multilingual.language-selector')
     </div>
-@stop--}}
+@stop
 
 @section('content')
-    <canvas id="canvas"></canvas>
-    {{--<div class="page-content browse container-fluid">
+    <div class="page-content browse container-fluid">
         @include('voyager::alerts')
         <div class="row">
             <div class="col-md-12">
@@ -49,7 +48,7 @@
                                 <div id="search-input">
                                     <div class="col-2">
                                         <select id="search_key" name="key">
-                                            @foreach($searchNames as $key => $name)
+                                        @foreach($searchNames as $key => $name)
                                                 <option value="{{ $key }}" @if($search->key == $key || (empty($search->key) && $key == $defaultSearchKey)) selected @endif>{{ $name }}</option>
                                             @endforeach
                                         </select>
@@ -287,7 +286,7 @@
                 </div>
             </div>
         </div>
-    </div>--}}
+    </div>
 
     {{-- Single delete modal --}}
     <div class="modal modal-danger fade" tabindex="-1" id="delete_modal" role="dialog">
@@ -314,6 +313,7 @@
 @if(!$dataType->server_side && config('dashboard.data_tables.responsive'))
     <link rel="stylesheet" href="{{ voyager_asset('lib/css/responsive.dataTables.min.css') }}">
 @endif
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 @stop
 
 @section('javascript')
@@ -391,71 +391,9 @@
             $('.selected_ids').val(ids);
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script>
-        var hasilArray = <?php echo json_encode($hasil); ?>;
-        var monthArray = <?php echo json_encode($monthName); ?>;
-        var userArray = <?php echo json_encode($jml_user); ?>;
-        window.chartColors = {
-            red: 'rgb(255, 99, 132)',
-            orange: 'rgb(255, 159, 64)',
-            yellow: 'rgb(255, 205, 86)',
-            green: 'rgb(75, 192, 192)',
-            blue: 'rgb(54, 162, 235)',
-            purple: 'rgb(153, 102, 255)',
-            grey: 'rgb(231,233,237)'
-        };
-
-        var config = {
-            type: 'line',
-            data: {
-                labels: monthArray,
-                datasets: [{
-                    label: "Nilai SKM",
-                    backgroundColor: window.chartColors.red,
-                    borderColor: window.chartColors.red,
-                    data: hasilArray,
-                    fill: false,
-                }, {
-                    label: "Jumlah Responden",
-                    fill: false,
-                    backgroundColor: window.chartColors.blue,
-                    borderColor: window.chartColors.blue,
-                    data: userArray,
-                }]
-            },
-            options: {
-                responsive: true,
-                title:{
-                    display:true,
-                    text:'Rekap Data SKM'
-                },
-                tooltips: {
-                    mode: 'index',
-                    intersect: false,
-                },
-                hover: {
-                    mode: 'nearest',
-                    intersect: true
-                },
-                scales: {
-                    xAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: ''
-                        }
-                    }],
-                    yAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                        },
-                    }]
-                }
-            }
-        };
-        var ctx = document.getElementById("canvas").getContext("2d");
-        var myLine = new Chart(ctx, config);
+        $('input[name="dates"]').daterangepicker();
     </script>
 @stop
