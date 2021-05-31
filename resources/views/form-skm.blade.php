@@ -28,7 +28,7 @@
                             <div class="form-group">
                                 <div class="input-slider-container">
                                     <h5 class="text-dark font-weight-bold">{{$pertanyaan->pertanyaan}}</h5>
-                                    <input class="js-range-slider" name="slider[]" id="slider[]" type="text">
+                                    <input class="js-range-slider" name="p{{$pertanyaan->id}}" id="{{$pertanyaan->id}}" type="text">
                                 </div>
                             </div>
                             @endforeach
@@ -50,11 +50,10 @@
     <script>
         $(".js-range-slider").ionRangeSlider({
             skin: "big",
-            min : "0",
-            max : "100",
-            from: "50",
+            from: "4",
             grid : "true",
-            grid_num : "5",
+            grid_num : "3",
+            values : ['Tidak Baik', 'Kurang Baik', 'Baik', 'Sangat Baik']
         });
     </script>
     </script>

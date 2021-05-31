@@ -84,9 +84,25 @@ class SkmController extends Controller
         Return view('form-skm', compact('pertanyaans'));
     }
     public function storeDataSKM(Request $request){
-        $data = $request->slider;
+
+        $datas = $request->except('_token');
+        foreach ($datas as $key => $data){
+            if ($data == "Tidak Baik"){
+                $data[]= 1;
+            }
+            elseif ($data == "Kurang Baik"){
+                $data[] = 2;
+            }
+            elseif ($data == "Baik"){
+                $data[] = 3;
+            }
+            else {
+                $data[] = 4;
+            }
+        }
+        dd($data[]);
         $id = Session::get('key');
-        $result = round(array_sum($data) / count($data), 2);
+        $result = round(array_sum($data) / count($data) * 25 , 2);
 
         $store = new DataSkm();
         $store->user_id = $id;
