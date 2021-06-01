@@ -52,7 +52,6 @@
             skin: "big",
             from: "4",
             grid : "true",
-            grid_num : "3",
             values : ['Tidak Baik', 'Kurang Baik', 'Baik', 'Sangat Baik']
         });
     </script>
