@@ -47,7 +47,7 @@
                                     <div class="input-group input-group-alternative">
                                         <select class="form-control" name="gender" id="gender" placeholder="Jenis Kelamin" type="text" required>
                                             <option disabled selected value></option>
-                                            <option value="L">Laki-laki</option>
+                                            <option value="L">Laki-Laki</option>
                                             <option value="P">Perempuan</option>
                                             <option value="Lainnya">Lebih baik tidak menyebut</option>
                                         </select>

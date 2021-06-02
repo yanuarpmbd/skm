@@ -40,6 +40,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row row-grid justify-content-between align-items-center">
+                <div class="mx-auto">
+                    <img src="{{asset('img/ptsp_.png')}}">
+                </div>
+            </div>
         </div>
         {{--<!-- SVG separator -->
         <div class="separator separator-bottom separator-skew">

@@ -24,6 +24,7 @@ class SkmController extends Controller
         $result=curl_exec($ch);
         curl_close($ch);
         $datas = json_decode($result,true);
+        //dd($datas);
         $data_users = DataUser::all();
         foreach ($data_users as $data_user){
         }
@@ -36,6 +37,9 @@ class SkmController extends Controller
         $nama_perusahaan = ($data['fullname_perusahaan']);
         $sektor = ($data['parent_name']);
         $jenis_izin = ($data['name']);
+        $alamat = ($data['address']);
+        $no_telp = ($data['phone']);
+        $jenis_kelamin = ($data['gender']);
 
         if ($request_id == null){
             return Redirect::back()->with('bad', 'Data Tidak Ditemukan');
@@ -44,7 +48,7 @@ class SkmController extends Controller
             return Redirect::back()->with('bad', 'Maaf, Anda Sudah Pernah Mengisi Survey Kepuasan Masyarakat, Terimakasih');
         }
         else{
-            return view('data-skm', compact('request_id', 'nama', 'nama_perusahaan', 'sektor', 'jenis_izin'));
+            return view('data-skm', compact('request_id', 'nama', 'nama_perusahaan', 'sektor', 'jenis_izin', 'alamat', 'no_telp', 'jenis_kelamin'));
         }
     }
     public function storeDataUser(Request $request)

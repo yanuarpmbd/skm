@@ -39,24 +39,19 @@
                                 <div class="form-group">
                                     <h6>Alamat</h6>
                                     <div class="input-group input-group-alternative mb-3">
-                                        <input class="form-control" name="alamat" id="alamat" placeholder="Alamat" type="text" required>
+                                        <input class="form-control" name="alamat" id="alamat" placeholder="Alamat" value="{{$alamat}}" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <h6>No Telp</h6>
                                     <div class="input-group input-group-alternative mb-3">
-                                        <input class="form-control" name="no_telp" id="no_telp" placeholder="Nomor Telepon" type="text" required>
+                                        <input class="form-control" name="no_telp" id="no_telp" placeholder="Nomor Telepon" value="{{$no_telp}}" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <h6>Jenis Kelamin</h6>
                                     <div class="input-group input-group-alternative">
-                                        <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" placeholder="Jenis Kelamin" type="text" required>
-                                            <option disabled selected value></option>
-                                            <option value="L">Laki-laki</option>
-                                            <option value="P">Perempuan</option>
-                                            <option value="Lainnya">Lebih baik tidak menyebut</option>
-                                        </select>
+                                        <input class="form-control" name="jenis_kelamin" id="jenis_kelamin" placeholder="Jenis Kelamin" value="{{$jenis_kelamin}}" type="text" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
