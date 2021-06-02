@@ -5,16 +5,6 @@
 @endsection
 @section('content')
     <section class="sections section-xl section-shaped">
-        <div class="shape shape-style-1 shape-default">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <div class="container py-md">
             <div class="col-lg-12">
                 <div class="bg-secondary shadow border-0">

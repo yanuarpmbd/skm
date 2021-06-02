@@ -1,16 +1,6 @@
 @extends('layout.app')
 @section('css')
     <section class="section section-shaped section-xl">
-        <div class="shape shape-style-1 bg-gradient-default">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <div class="container pt-lg-12">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
