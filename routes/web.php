@@ -28,5 +28,6 @@ Route::get('/nilai-skm','SkmController@getTotalSKM')->name('total-skm');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     //Custom
-    Route::view('rekap-bulanan','vendor.voyager.rekap-bulanans.browse')->name('rekap-bulanan');
+    Route::get('rekap-bulanan', ['uses'=>'RekapBulananController@index', 'as'=>'rekapbulanan.data']);
+    //Route::get('/rekap-bulanan','RekapBulananController@index')->name('get-rekap-bulanan');
 });

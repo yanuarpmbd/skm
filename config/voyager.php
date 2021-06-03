@@ -187,10 +187,14 @@ return [
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
+        'https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css',
+        'https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css'
         //'css/custom.css',
     ],
 
     'additional_js' => [
+        'https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js',
+        'https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'
         //'js/custom.js',
     ],
 

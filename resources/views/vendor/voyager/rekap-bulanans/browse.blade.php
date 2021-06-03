@@ -1,5 +1,9 @@
 @extends('voyager::master')
 
+@section('css')
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css"/>
+@stop
+
 @section('page_title', __('voyager::generic.viewing').' "Rekap Bulanans"')
 
 {{--@section('page_header')
@@ -43,52 +47,46 @@
             <div class="col-md-12">
                 <div class="panel panel-bordered">
                     <div class="panel-body">
-                        <form name="formtahun" id="formtahun">
-                            <select name=tahun id="tahun">
-
-                            </select>
-                        </form>
-                        <table table id="dataTable" class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th rowspan="2" data-class="expand"><div align="center">No</div></th>
-                                <th rowspan="2" data-hide="phone"><div align="center">Jenis Izin </div></th>
-                                <th height="21" colspan="14"><div align="center">Bulan</div></th>
-                            </tr>
-                            <tr>
-                                <th><div align="center">Jan</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Feb</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Mar</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Apr</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Mei</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Jun</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Jul</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Ags</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Sep</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Okt</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Nov</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Des</div></th>
-                                <th data-hide="phone,tablet"><div align="center">Rata-Rata</div></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                        <canvas id="canvas"></canvas>
                         <div class="table-responsive">
-                            <table id="dataTable" class="table table-hover">
+                            <table table id="skm-table" class="table table-hover">
+                                {{--<thead>
+                                    <tr>
+                                        <th rowspan="2" data-class="expand"><div align="center">No</div></th>
+                                        <th rowspan="2" data-hide="phone"><div align="center">Jenis Izin </div></th>
+                                        <th height="21" colspan="14"><div align="center">Bulan</div></th>
+                                    </tr>
+                                    <tr>
+                                        <th><div align="center">Jan</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Feb</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Mar</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Apr</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Mei</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Jun</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Jul</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Ags</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Sep</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Okt</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Nov</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Des</div></th>
+                                        <th data-hide="phone,tablet"><div align="center">Rata-Rata</div></th>
+                                    </tr>
+                                </thead>--}}
                                 <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Bulan</th>
-                                    <th>Jumlah Responden</th>
-                                    <th>Nilai</th>
+                                    <th data-class="expand" rowspan="2">No</th>
+                                    <th data-hide="tablet" rowspan="2">Bulan</th>
+                                    <th data-hide="tablet, phone" rowspan="2">Jumlah Responden</th>
+                                    <th data-hide="tablet, phone" rowspan="2">Jumlah Pertanyaan</th>
+                                    <th data-hide="tablet, phone" rowspan="1" colspan="4"><div align="center">Jumlah Respon</div></th>
+                                    <th data-hide="tablet, phone" rowspan="2">Nilai</th>
+                                </tr>
+                                <tr>
+                                    <th>Kurang</th>
+                                    <th>Cukup</th>
+                                    <th>Baik</th>
+                                    <th>Baik Sekali</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-
-                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -97,12 +95,25 @@
         </div>
     </div>
 
-    {{-- Single delete modal --}}
+{{-- Single delete modal --}}
 
-@stop
-
-@section('css')
 @stop
 
 @section('javascript')
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(function() {
+            $('#skm-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('rekapbulanan.data') !!}',
+                columns: [
+                    { defaultContent: "",data: 'no', name: 'no' },
+                    { defaultContent: "",data: 'bulan', name: 'bulan' },
+                    { defaultContent: "",data: 'jml_res', name: 'jml_res' },
+                ]
+            });
+        });
+    </script>
 @stop
