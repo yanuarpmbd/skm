@@ -111,7 +111,13 @@
                 columns: [
                     { defaultContent: "",data: 'no', name: 'no' },
                     { defaultContent: "",data: 'bulan', name: 'bulan' },
-                    { defaultContent: "",data: 'jml_res', name: 'jml_res' },
+                    { defaultContent: "",data: 'jumlah', name: 'jumlah' },
+                    { defaultContent: "",data: 'jumlah_pertanyaan', name: 'jumlah_pertanyan' },
+                    { defaultContent: "",data: 'tidak_baik', name: 'tidak_baik' },
+                    { defaultContent: "",data: 'kurang_baik', name: 'kurang_baik' },
+                    { defaultContent: "",data: 'baik', name: 'baik' },
+                    { defaultContent: "",data: 'sangat_baik', name: 'sangat_baik' },
+                    { defaultContent: "",data: 'nilai', name: 'nilai' },
                 ]
             });
         });
