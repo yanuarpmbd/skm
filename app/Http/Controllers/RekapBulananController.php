@@ -3,29 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\DataSkm;
-use App\DataUser;
 use App\Exports\RekapBulananExport;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Collection;
-use TCG\Voyager\Voyager;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
-use Maatwebsite\Excel\Facades\Excel;
 use App\DataTables\RekapBulananDataTable;
-use Yajra\DataTables\CollectionDataTable;
 
 
-class RekapController extends Controller{
-    /*public function index() {
-        $years = DataSkm::select(DB::raw('YEAR(created_at) tahun'))
-            ->groupby('tahun')
-            ->get();
-        $user = DataUser::all();
-
-        Return view('vendor.voyager.rekap-bulanans.browse', compact('years','user'));
-    }*/
-
+class RekapBulananController extends Controller{
     public function index(Request $request){
         $tahun = DataSkm::select(DB::raw('YEAR(created_at) tahun'))
             ->groupby('tahun')
@@ -135,6 +121,6 @@ class RekapController extends Controller{
             return Datatables::of($data)
                 ->make(true);
         }
-        return view('vendor.voyager.rekap-bulanans.browse', compact('tahun'));
+        return view('rekap.rekap-bulanan', compact('tahun'));
     }
 }
