@@ -8,9 +8,14 @@ use Yajra\DataTables\DataTables;
 
 class RekapDataSKMController extends Controller{
     public function index(Request $request){
-        $query = DataSkm::all();
         $no = 1;
         if ($request->ajax()) {
+            if(!empty($request->from_date)){
+                $query = DataSkm::latest()->whereBetween('created_at', array(date($request->from_date), date($request->to_date)))->get();
+            }
+            else{
+                $query = DataSkm::latest()->get();
+            }
             foreach ($query as $key => $value) {
                 $obj = new \stdClass();
                 $obj->no = $no++;

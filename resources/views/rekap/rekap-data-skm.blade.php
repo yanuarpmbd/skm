@@ -16,20 +16,18 @@
 
 @section('content')
     @include('voyager::alerts')
-    <div class="row">
+    <div class="row input-daterange">
+        <div class="col-md-1">
+        </div>
         <div class="col-md-4">
-            <div class="form-group">
-                <h5>Dari Tanggal</h5>
-                <input type="text" id="min" name="min" class="form-control">
-            </div>
-            <div class="form-group">
-                <h5>Sampai Tanggal</h5>
-                <input type="text" id="max" name="max" class="form-control">
-            </div>
-            <div class="form-group">
-                <button type="button" name="filter" id="filter" class="btn btn-info">Filter</button>
-                <button type="button" name="reset" id="reset" class="btn btn-default">Reset</button>
-            </div>
+            <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date" readonly />
+        </div>
+        <div class="col-md-4">
+            <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date" readonly />
+        </div>
+        <div class="col-md-3">
+            <button type="button" name="filter" id="filter" class="btn btn-primary">Filter</button>
+            <button type="button" name="refresh" id="refresh" class="btn btn-default">Refresh</button>
         </div>
     </div>
     <div class="row">
@@ -71,10 +69,15 @@
 
 @section('javascript')
     <script type="text/javascript">
-        $(function() {
-            fill_datatable();
-            function fill_datatable(tahun = ''){
-                var dataTable = $('#skm-table').DataTable({
+        $(document).ready(function(){
+        $('.input-daterange').datepicker({
+            todayBtn:'linked',
+            format:'yyyy-mm-dd',
+            autoclose:true
+        });
+        load_data();
+        function load_data(from_date = '', to_date = ''){
+                $('#skm-table').DataTable({
                     dom: 'Bfrtip',
                     processing: true,
                     responsive: true,
@@ -83,7 +86,7 @@
                     ],
                     ajax: {
                         url: "{{ route('rekap-data-skm.index') }}",
-                        data: {tahun:tahun}
+                        data: {from_date:from_date, to_date:to_date}
                     },
                     columns: [
                         { defaultContent: "",data: 'no', name: 'no' },
@@ -108,40 +111,26 @@
                 });
             }
             $('#filter').click(function(){
-                var tahun = $('#tahun').val();
-
-                if(tahun != '') {
+                var from_date = $('#from_date').val();
+                var to_date = $('#to_date').val();
+                if(from_date != '' &&  to_date != '')
+                {
                     $('#skm-table').DataTable().destroy();
-                    fill_datatable(tahun, tahun);
+                    load_data(from_date, to_date);
                 }
-                else {
+                else
+                {
+                    alert('Tanggal Harus Diisi');
                 }
             });
-            $('#reset').click(function(){
-                $('#tahun').val('');
+
+            $('#refresh').click(function(){
+                $('#from_date').val('');
+                $('#to_date').val('');
                 $('#skm-table').DataTable().destroy();
-                fill_datatable();
+                load_data();
             });
         });
     </script>
-    <script type="text/javascript">
-        $(function() {
 
-            $('input[name="datefilter"]').daterangepicker({
-                autoUpdateInput: false,
-                locale: {
-                    cancelLabel: 'Clear'
-                }
-            });
-
-            $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-            });
-
-            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                $(this).val('');
-            });
-
-        });
-    </script>
 @stop
