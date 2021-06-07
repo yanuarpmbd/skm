@@ -11,12 +11,12 @@ class RekapDataSKMController extends Controller{
         $no = 1;
         if ($request->ajax()) {
             if(!empty($request->from_date)){
-                $query = DataSkm::latest()->whereBetween('created_at', array(date($request->from_date), date($request->to_date)))->get();
+                $query = DataSkm::latest()->whereBetween('created_at', array(date(($request->from_date).' 00:00:00'), date(($request->to_date).' 23:59:59')))->get();
             }
             else{
                 $query = DataSkm::latest()->get();
             }
-            foreach ($query as $key => $value) {
+            foreach ($query as $value) {
                 $obj = new \stdClass();
                 $obj->no = $no++;
                 $obj->nama = $value->skm->nama;

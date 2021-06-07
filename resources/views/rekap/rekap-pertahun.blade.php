@@ -3,12 +3,12 @@
 @section('css')
 @stop
 
-@section('page_title', 'Rekap Bulanan')
+@section('page_title', 'Rekap Pertahun')
 
 @section('page_header')
     <div class="container-fluid">
         <h1 class="page-title">
-            <i class="voyager-calendar"></i>Rekap Bulanan
+            <i class="voyager-calendar"></i>Rekap Per Tahun
         </h1>
         @include('voyager::multilingual.language-selector')
     </div>
@@ -84,7 +84,7 @@
                         'excel', 'csv', 'pdf', 'copy', 'print'
                     ],
                     ajax: {
-                        url: "{{ route('rekap-bulanan.index') }}",
+                        url: "{{ route('rekap-pertahun.index') }}",
                         data: {tahun:tahun}
                     },
                     columns: [

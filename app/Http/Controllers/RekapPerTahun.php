@@ -11,7 +11,7 @@ use Yajra\DataTables\DataTables;
 use App\DataTables\RekapBulananDataTable;
 
 
-class RekapBulananController extends Controller{
+class RekapPerTahun extends Controller{
     public function index(Request $request){
         $tahun = DataSkm::select(DB::raw('YEAR(created_at) tahun'))
             ->groupby('tahun')
@@ -30,6 +30,7 @@ class RekapBulananController extends Controller{
             '11'=>'November',
             '12'=>'Desember',
         );
+        $year = $request->tahun;
         $no = 1;
         $now = Carbon::now()->year;
         if ($request->ajax()){
@@ -121,6 +122,6 @@ class RekapBulananController extends Controller{
             return Datatables::of($data)
                 ->make(true);
         }
-        return view('rekap.rekap-bulanan', compact('tahun'));
+        return view('rekap.rekap-pertahun', compact('tahun', 'year'));
     }
 }
