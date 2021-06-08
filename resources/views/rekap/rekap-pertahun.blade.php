@@ -6,9 +6,9 @@
 @section('page_title', 'Rekap Pertahun')
 
 @section('page_header')
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <h1 class="page-title">
-            <i class="voyager-calendar"></i>Rekap Per Tahun
+            <i class="voyager-calendar"></i>Rekap Per Tahun<p id="title"></p>
         </h1>
         @include('voyager::multilingual.language-selector')
     </div>
@@ -106,6 +106,7 @@
                 if(tahun != '') {
                     $('#skm-table').DataTable().destroy();
                     fill_datatable(tahun, tahun);
+                    document.getElementById("title").innerHTML = tahun;
                 }
                 else {
                 }

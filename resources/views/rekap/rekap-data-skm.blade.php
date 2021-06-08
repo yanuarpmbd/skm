@@ -8,7 +8,7 @@
 @section('page_header')
     <div class="container-fluid">
         <h1 class="page-title">
-            <i class="voyager-calendar"></i>Rekap Data SKM
+            <i class="voyager-calendar"></i>Rekap Data SKM <p id="title"></p>
         </h1>
         @include('voyager::multilingual.language-selector')
     </div>
@@ -117,6 +117,7 @@
                 {
                     $('#skm-table').DataTable().destroy();
                     load_data(from_date, to_date);
+                    document.getElementById("title").innerHTML = from_date + " - " + to_date;
                 }
                 else
                 {
