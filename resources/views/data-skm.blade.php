@@ -66,14 +66,7 @@
                                 <div class="form-group">
                                     <h6>Usia</h6>
                                     <div class="input-group input-group-alternative">
-                                        <select class="form-control" name="usia" id="usia" placeholder="Usia" type="text" required>
-                                            <option disabled selected value></option>
-                                            <option value="<20"><20 Tahun</option>
-                                            <option value="20-30">21-30 Tahun</option>
-                                            <option value="30-40">31-40 Tahun</option>
-                                            <option value="41-50">41-50 Tahun</option>
-                                            <option value=">50">>50 Tahun</option>
-                                        </select>
+                                        <input class="form-control" name="usia" id="usia" placeholder="Usia" type="text" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
