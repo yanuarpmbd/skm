@@ -30,11 +30,11 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" name="nomor_tiket" id="nomor_tiket" placeholder="Nomor Tiket..." type="number" required autocomplete="off">
+                                        <label for="nomor_tiket"></label><input class="form-control" name="nomor_tiket" id="nomor_tiket" placeholder="Nomor Tiket..." type="number" required autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary my-4">Submit !</button>
+                                    <button type="submit" class="btn btn-primary btn-lg my-4">Submit !</button>
                                 </div>
                             </form>
                             <div class="text-center text-muted mb-4">
@@ -46,7 +46,7 @@
             </div>
             <div class="row row-grid justify-content-between align-items-center">
                 <div class="mx-auto">
-                   <img src="{{asset('img/ptsp_.png')}}">
+                   <img alt="logo" src="{{asset('img/ptsp_.png')}}">
                 </div>
             </div>
         </div>

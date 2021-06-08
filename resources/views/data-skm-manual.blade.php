@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('css')
+@section('content')
     <section class="section section-shaped section-xl">
         <div class="container pt-lg-12">
             <div class="row justify-content-center">
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary mt-4">Lanjut !</button>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Lanjut !</button>
                                 </div>
                             </form>
                         </div>

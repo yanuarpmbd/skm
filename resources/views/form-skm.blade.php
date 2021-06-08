@@ -1,10 +1,6 @@
 @extends('layout.app')
-@section('css')
-    <!--Plugin CSS file with desired skin-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
-@endsection
 @section('content')
-    <section class="sections section-xl section-shaped">
+    <section class="section section-xl section-shaped">
         <div class="container py-md">
             <div class="col-lg-12">
                 <div class="bg-secondary shadow border-0">
@@ -23,7 +19,7 @@
                             </div>
                             @endforeach
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4">Simpan !</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Simpan !</button>
                             </div>
                         </form>
                     </div>

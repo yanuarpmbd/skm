@@ -20,6 +20,7 @@
     <link href="css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="css/argon-design-system.css?v=1.2.0" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
     @yield('css')
 </head>
 
