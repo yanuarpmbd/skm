@@ -46,11 +46,11 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="lead text-white text-center">Scan QR Code Untuk Pengisian SKM Melalui Smartphone</p>
+                    <p class="lead text-white text-center">Scan QR Code Untuk Pengisian SKM Melalui Smartphone :</p>
                 </div>
-                <div class="col-md-12">
-                    <img class="img-center" width="150px" height="150px" alt="qr" src="{{asset('img/qr-code.png')}}">
-                    {{--<img alt="logo" src="{{asset('img/ptsp_.png')}}">--}}
+                <div class="mx-auto justify-content-center">
+                    <img style="margin-right: 25px" width="150px" alt="qr" src="{{asset('img/qr-code.png')}}">&nbsp;
+                    <img style="margin-left: 25px" width="150px" alt="logo" src="{{asset('img/ptsp_.png')}}">
                 </div>
             </div>
         </div>
