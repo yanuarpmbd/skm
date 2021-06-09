@@ -7,7 +7,7 @@
                     <h3 class="display-3 text-white">DPMPTSP Provinsi Jawa Tengah<span class="text-white">Aplikasi <strong>Survey Kepuasan Masyarakat</strong></span></h3>
                     <p class="lead text-white">Selamat Datang di Aplikasi SKM DPMPTSP Provinsi Jawa Tengah</p>
                     <div class="btn-wrapper">
-                        <a href="{{route('total-skm')}}" class="btn btn-success">Lihat Nilai SKM</a>
+                        <a href="{{route('total-skm')}}" class="btn btn-lg btn btn-success">Lihat Nilai SKM</a>
                     </div>
                 </div>
             </div>
@@ -34,11 +34,11 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg my-4">Submit !</button>
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg my-4">Submit !</button>
                                 </div>
                             </form>
                             <div class="text-center text-muted mb-4">
-                                <a href="{{route('data-pemohon-manual')}}" type="button" class="btn btn-instagram my-0">Tidak Memiliki Nomor Tiket?</a>
+                                <a href="{{route('data-pemohon-manual')}}" type="button" class="btn btn-instagram btn-block btn-lg my-0">Tidak Memiliki Nomor Tiket?</a>
                             </div>
                         </div>
                     </div>

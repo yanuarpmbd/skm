@@ -17,7 +17,7 @@
                                     <h1 class="display-1 text-gray-dark">{{$res}}</h1>
                                 </div>
                                 <div class="text-center">
-                                    <a href="{{route('home')}}" type="button" class="btn btn-primary my-4">Home</a>
+                                    <a href="{{route('home')}}" type="button" class="btn btn-lg btn-primary my-4">Home</a>
                                 </div>
                             </div>
                         </div>
