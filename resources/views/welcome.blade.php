@@ -44,9 +44,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row row-grid justify-content-between align-items-center">
-                <div class="mx-auto">
-                   <img alt="logo" src="{{asset('img/ptsp_.png')}}">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="lead text-white text-center">Scan QR Code Untuk Pengisian SKM Melalui Smartphone</p>
+                </div>
+                <div class="col-md-12">
+                    <img class="img-center" width="150px" height="150px" alt="qr" src="{{asset('img/qr-code.png')}}">
+                    {{--<img alt="logo" src="{{asset('img/ptsp_.png')}}">--}}
                 </div>
             </div>
         </div>
