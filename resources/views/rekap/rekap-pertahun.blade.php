@@ -40,17 +40,17 @@
                 <div class="panel panel-bordered">
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <table table id="skm-table" class="table table-hover">
+                            <table table id="skm-table" class="table table-bordered table-hover">
                                 <thead>
-                                <tr>
-                                    <th data-class="expand" rowspan="2">No</th>
-                                    <th data-hide="tablet" rowspan="2">Bulan</th>
-                                    <th data-hide="tablet, phone" rowspan="2">Jumlah Responden</th>
-                                    <th data-hide="tablet, phone" rowspan="2">Jumlah Pertanyaan</th>
-                                    <th data-hide="tablet, phone" rowspan="1" colspan="4"><div align="center">Jumlah Respon</div></th>
-                                    <th data-hide="tablet, phone" rowspan="2">Nilai</th>
+                                    <tr>
+                                    <th rowspan="2">No</th>
+                                    <th rowspan="2">Bulan</th>
+                                    <th rowspan="2">Jumlah Responden</th>
+                                    <th rowspan="2">Jumlah Pertanyaan</th>
+                                    <th rowspan="1" colspan="4"><div align="center">Jumlah Respon</div></th>
+                                    <th rowspan="2">Nilai</th>
                                 </tr>
-                                <tr>
+                                    <tr>
                                     <th>Kurang</th>
                                     <th>Cukup</th>
                                     <th>Baik</th>
@@ -80,6 +80,7 @@
                     serverSide: true,
                     paging: false,
                     responsive: true,
+                    autoWidth: true,
                     buttons: [
                         'excel', 'csv', 'pdf', 'copy', 'print'
                     ],

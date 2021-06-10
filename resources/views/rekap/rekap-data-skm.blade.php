@@ -35,27 +35,27 @@
             <div class="panel panel-bordered">
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table table id="skm-table" class="table table-hover">
+                        <table table id="skm-table" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th data-class="expand">No</th>
-                                <th data-hide="tablet">Nama</th>
-                                <th data-hide="tablet, phone">Alamat</th>
-                                <th data-hide="tablet, phone">No Telp</th>
-                                <th data-hide="tablet, phone">Pendidikan</th>
-                                <th data-hide="tablet, phone">Jenis Kelamin</th>
-                                <th data-hide="tablet, phone">Usia</th>
-                                <th data-hide="tablet, phone">Status</th>
-                                <th data-hide="tablet, phone">P1</th>
-                                <th data-hide="tablet, phone">P2</th>
-                                <th data-hide="tablet, phone">P3</th>
-                                <th data-hide="tablet, phone">P4</th>
-                                <th data-hide="tablet, phone">P5</th>
-                                <th data-hide="tablet, phone">P6</th>
-                                <th data-hide="tablet, phone">P7</th>
-                                <th data-hide="tablet, phone">P8</th>
-                                <th data-hide="tablet, phone">P9</th>
-                                <th data-hide="tablet, phone">Nilai</th>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>No Telp</th>
+                                <th>Pendidikan</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Usia</th>
+                                <th>Status</th>
+                                <th>P1</th>
+                                <th>P2</th>
+                                <th>P3</th>
+                                <th>P4</th>
+                                <th>P5</th>
+                                <th>P6</th>
+                                <th>P7</th>
+                                <th>P8</th>
+                                <th>P9</th>
+                                <th>Nilai</th>
                             </tr>
                             </thead>
                         </table>

@@ -11,7 +11,7 @@ use Yajra\DataTables\DataTables;
 use App\DataTables\RekapBulananDataTable;
 
 
-class RekapPerTahun extends Controller{
+class RekapPerTahunController extends Controller{
     public function index(Request $request){
         $tahun = DataSkm::select(DB::raw('YEAR(created_at) tahun'))
             ->groupby('tahun')
