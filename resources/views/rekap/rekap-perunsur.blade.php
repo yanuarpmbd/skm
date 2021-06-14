@@ -43,13 +43,13 @@
                             <table table id="skm-table" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th data-class="expand" rowspan="2">No</th>
-                                        <th data-hide="tablet" rowspan="2">Bulan</th>
-                                        <th data-hide="tablet, phone" rowspan="2">Jumlah Responden</th>
-                                        <th data-hide="tablet, phone" rowspan="2">Jumlah Pertanyaan</th>
-                                        <th data-hide="tablet, phone" rowspan="1" colspan="9"><div align="center">Nilai Unsur Pelayanan</div></th>
-                                        <th data-hide="tablet, phone" rowspan="2">Jumlah Nilai</th>
-                                        <th data-hide="tablet, phone" rowspan="2">Nilai</th>
+                                        <th rowspan="2">No</th>
+                                        <th rowspan="2">Bulan</th>
+                                        <th rowspan="2">Jumlah Responden</th>
+                                        <th rowspan="2">Jumlah Pertanyaan</th>
+                                        <th rowspan="1" colspan="9"><div align="center">Nilai Unsur Pelayanan</div></th>
+                                        <th rowspan="2">Jumlah Nilai</th>
+                                        <th rowspan="2">Nilai</th>
                                     </tr>
                                     <tr>
                                         <th>p1</th>
@@ -65,11 +65,9 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>OK</th>
-                                        <th>OK</th>
+                                        <td>OK</td>
                                     </tr>
                                 </tfoot>
-                                <tbody></tbody>
                             </table>
                         </div>
                     </div>
@@ -85,6 +83,7 @@
 @section('javascript')
     <script>
         $(function() {
+            fill_datatable();
             function fill_datatable(tahun = ''){
                 var dataTable = $('#skm-table').DataTable({
                     "footerCallback": function ( row, data, start, end, display ) {
@@ -120,27 +119,24 @@
                         data: {tahun:tahun}
                     },
                     columns: [
-                        { defaultContent: "",data: 'no', name: 'no' },
+                        { defaultContent: "",data: 'no', name: 'no', className: "text-center" },
                         { defaultContent: "",data: 'bulan', name: 'bulan' },
-                        { defaultContent: "",data: 'jumlah', name: 'jumlah' },
-                        { defaultContent: "",data: 'jumlah_pertanyaan', name: 'jumlah_pertanyan' },
-                        { defaultContent: "",data: 'p1', name: 'p1' },
-                        { defaultContent: "",data: 'p2', name: 'p2' },
-                        { defaultContent: "",data: 'p3', name: 'p3' },
-                        { defaultContent: "",data: 'p4', name: 'p4' },
-                        { defaultContent: "",data: 'p5', name: 'p5' },
-                        { defaultContent: "",data: 'p6', name: 'p6' },
-                        { defaultContent: "",data: 'p7', name: 'p7' },
-                        { defaultContent: "",data: 'p8', name: 'p8' },
-                        { defaultContent: "",data: 'p9', name: 'p9' },
-                        { defaultContent: "",data: 'jml_nilai', name: 'jml_nilai' },
-                        { defaultContent: "",data: 'nilai', name: 'nilai' },
+                        { defaultContent: "",data: 'jumlah', name: 'jumlah', className: "text-center" },
+                        { defaultContent: "",data: 'jumlah_pertanyaan', name: 'jumlah_pertanyan', className: "text-center" },
+                        { defaultContent: "",data: 'p1', name: 'p1', className: "text-center" },
+                        { defaultContent: "",data: 'p2', name: 'p2', className: "text-center" },
+                        { defaultContent: "",data: 'p3', name: 'p3', className: "text-center" },
+                        { defaultContent: "",data: 'p4', name: 'p4', className: "text-center" },
+                        { defaultContent: "",data: 'p5', name: 'p5', className: "text-center" },
+                        { defaultContent: "",data: 'p6', name: 'p6', className: "text-center" },
+                        { defaultContent: "",data: 'p7', name: 'p7', className: "text-center" },
+                        { defaultContent: "",data: 'p8', name: 'p8', className: "text-center" },
+                        { defaultContent: "",data: 'p9', name: 'p9', className: "text-center" },
+                        { defaultContent: "",data: 'jml_nilai', name: 'jml_nilai', className: "text-center" },
+                        { defaultContent: "",data: 'nilai', name: 'nilai', className: "text-center" },
                     ]
                 });
             }
-            $("#skm-table").append('<tfoot><th></th></tfoot>');
-            fill_datatable();
-
             $('#filter').click(function(){
                 var tahun = $('#tahun').val();
 

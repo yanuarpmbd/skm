@@ -89,15 +89,15 @@
                         data: {tahun:tahun}
                     },
                     columns: [
-                        { defaultContent: "",data: 'no', name: 'no' },
+                        { defaultContent: "",data: 'no', name: 'no', className: "text-center" },
                         { defaultContent: "",data: 'bulan', name: 'bulan' },
-                        { defaultContent: "",data: 'jumlah', name: 'jumlah' },
-                        { defaultContent: "",data: 'jumlah_pertanyaan', name: 'jumlah_pertanyan' },
-                        { defaultContent: "",data: 'tidak_baik', name: 'tidak_baik' },
-                        { defaultContent: "",data: 'kurang_baik', name: 'kurang_baik' },
-                        { defaultContent: "",data: 'baik', name: 'baik' },
-                        { defaultContent: "",data: 'sangat_baik', name: 'sangat_baik' },
-                        { defaultContent: "",data: 'nilai', name: 'nilai' },
+                        { defaultContent: "",data: 'jumlah', name: 'jumlah', className: "text-center" },
+                        { defaultContent: "",data: 'jumlah_pertanyaan', name: 'jumlah_pertanyan', className: "text-center" },
+                        { defaultContent: "",data: 'tidak_baik', name: 'tidak_baik', className: "text-center" },
+                        { defaultContent: "",data: 'kurang_baik', name: 'kurang_baik', className: "text-center" },
+                        { defaultContent: "",data: 'baik', name: 'baik', className: "text-center" },
+                        { defaultContent: "",data: 'sangat_baik', name: 'sangat_baik', className: "text-center" },
+                        { defaultContent: "",data: 'nilai', name: 'nilai', className: "text-center" },
                     ]
                 });
             }
