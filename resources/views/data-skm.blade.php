@@ -23,7 +23,7 @@
                                 <div class="form-group">
                                     <h6>Nama / Nama Perusahaan</h6>
                                     <div class="input-group input-group-alternative mb-3">
-                                        <input class="form-control" name="nama" id="nama" placeholder="Nama" value="{{$nama}} {{$nama_perusahaan}}" type="text" readonly required>
+                                        <input class="form-control" name="nama" id="nama" placeholder="Nama" value="{{$nama}} {{$nama_perusahaan}}" type="text" style="text-transform:uppercase" readonly required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -66,7 +66,7 @@
                                 <div class="form-group">
                                     <h6>Usia</h6>
                                     <div class="input-group input-group-alternative">
-                                        <input class="form-control" name="usia" id="usia" placeholder="Usia" type="text" autocomplete="off" required>
+                                        <input class="form-control" name="usia" id="usia" placeholder="Usia" type="number" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="form-group">

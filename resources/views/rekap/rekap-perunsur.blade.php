@@ -63,11 +63,6 @@
                                         <th>p9</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <td>OK</td>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>
