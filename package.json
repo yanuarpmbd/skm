@@ -17,5 +17,9 @@
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.39.0",
         "sass-loader": "^7.1.0"
+    },
+    "dependencies": {
+        "boostrap": "^2.0.0",
+        "bootstrap": "^5.1.1"
     }
 }
