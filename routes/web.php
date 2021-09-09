@@ -32,5 +32,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('rekap-pertahun', 'RekapPerTahunController');
     Route::resource('rekap-data-skm', 'RekapDataSKMController');
     Route::resource('rekap-perunsur', 'RekapPerUnsurController');
+    Route::resource('graph', 'GraphSKMController');
     Route::resource('publikasi', 'PublikasiController');
 });
