@@ -23,7 +23,7 @@
             border-style: double;
         }
         .text-very-large {
-            font-size: 500px;
+            font-size: 200px;
         }
     </style>
 @stop
@@ -48,11 +48,11 @@
                     <div class="container-fluid">
                         <div class="row row-all-border">
                             <div class="col-md-12">
-                                <h1 class="text-center row-double-bordered">
+                                <h1 class="text-center row-double-bordered text-uppercase">
                                     INDEKS KEPUASAN MASYARAKAT (IKM)<br>
                                     DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU<br>
                                     PROVINSI JAWA TENGAH<br>
-                                    BULAN ---- TAHUN ----
+                                    BULAN {{$nama_bulan}} TAHUN {{$tahun}}
                                 </h1>
                                 <div class="row">
                                     <div class="col-md-6 text-center">
@@ -63,7 +63,9 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <h1 class="text-very-large">76</h1>
+                                                @foreach($data as $d)
+                                                <h1 class="text-very-large">{{$d->nilai}}</h1>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -74,8 +76,11 @@
                                             </div>
                                         </div>
                                         <div class="row">
+
                                             <div class="col-md-12 text-left">
-                                                <h1>Jumlah : </h1>
+                                                @foreach($data as $d)
+                                                <h1>Jumlah : {{$d->jumlah}}</h1>
+                                                @endforeach
                                                 <h1>Jenis Kelamin : L = 1/P = 2</h1>
                                                 <h1>Pendidikan : </h1>
                                                 <h1>SD = 1</h1>
