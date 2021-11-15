@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
-Route::get('/data-pemohon','SkmController@getdata')->name('data-pemohon');
-Route::get('/data-pemohon-manual', function () {
+Route::post('/data-pemohon','SkmController@getdata')->name('data-pemohon');
+Route::post('/data-pemohon-manual', function () {
     return view('data-skm-manual');
 })->name('data-pemohon-manual');
 Route::post('/form-skm','SkmController@storeDataUser')->name('form-skm');

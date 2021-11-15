@@ -23,7 +23,7 @@
                                 @endif
                                 <h6>Silahkan Masukkan Nomor Tiket Anda</h6>
                             </div>
-                            <form action="{{route('data-pemohon')}}" method="get">
+                            <form action="{{route('data-pemohon')}}" method="post">
                                 @csrf
                                 <div class="form-group mb-3">
                                     <div class="input-group input-group-alternative">
