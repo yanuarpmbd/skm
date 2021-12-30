@@ -21,9 +21,10 @@
                                         {{session()->get('bad')}}
                                     </div>
                                 @endif
-                                <h6>Silahkan Masukkan Nomor Tiket Anda</h6>
+                                {{--<h6>Silahkan Masukkan Nomor Tiket Anda</h6>--}}
+                                <h1>Pengisian SKM Ditutup untuk Sementara</h1>
                             </div>
-                            <form action="{{route('data-pemohon')}}" method="post">
+                            {{--<form action="{{route('data-pemohon')}}" method="post">
                                 @csrf
                                 <div class="form-group mb-3">
                                     <div class="input-group input-group-alternative">
@@ -39,7 +40,7 @@
                             </form>
                             <div class="text-center text-muted mb-4">
                                 <a href="{{route('data-pemohon-manual')}}" type="button" class="btn btn-instagram btn-block btn-lg my-0">Tidak Memiliki Nomor Tiket?</a>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                 </div>
