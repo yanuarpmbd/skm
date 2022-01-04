@@ -22,7 +22,7 @@
                                     </div>
                                 @endif
                                 <h6>Silahkan Masukkan Nomor Tiket Anda</h6>
-                                <h1>Pengisian SKM Ditutup untuk Sementara</h1>
+                                {{--<h1>Pengisian SKM Ditutup untuk Sementara</h1>--}}
                             </div>
                             <form action="{{route('data-pemohon')}}" method="post">
                                 @csrf
